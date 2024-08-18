@@ -7,8 +7,10 @@
   },
   "author": "",
   "license": "ISC",
+
   "description": "",
   "dependencies": {
+    "express": "^4.19.2",
     "lorem-ipsum": "^2.0.8"
   }
 }

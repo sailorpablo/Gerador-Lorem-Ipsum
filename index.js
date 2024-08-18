@@ -1,15 +1,19 @@
-import { LoremIpsum } from "lorem-ipsum";
+import { LoremIpsum } from 'https://cdn.skypack.dev/lorem-ipsum';
+// const LoremIpsum = require("lorem-ipsum").LoremIpsum;
 
-function gerarLoremIpsum() {
-    
-    console.log("teste Lorem Ipsum")
+const lorem = new LoremIpsum({
+  sentencesPerParagraph: {
+    max: 8,
+    min: 4
+  },
+  wordsPerSentence: {
+    max: 16,
+    min: 4
+  }
+});
 
-    //document.getElementById("result")
-    //.value = lorem.generateWords(1);
+lorem.generateWords(1);
+lorem.generateSentences(5);
+lorem.generateParagraphs(7);
 
-
-}
-
-function teste() {
-    console.log("teste")
-}
+export { lorem };

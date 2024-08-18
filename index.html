@@ -3,8 +3,6 @@
 
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="index.css"/>
     <title>loremIpsum generator</title>
 
@@ -14,25 +12,32 @@
 
     <form>
         <div>
-            <button type="button" class="outline" onclick="gerarLoremIpsum()">Gerar Lorem Ipsum</button><br>
+            <button type="button" class="outline" id="btnGerarLoremIpsum">Gerar Lorem Ipsum</button><br>
         </div>
 
         <div>
-            <input type="text" id="result" onchange="teste()"/>
+            <input type="text" id="result" />
         </div>
-
-
-
-
-
 
 
 
     </form>
-	
+	  <script type="module">
+
+      import { lorem } from './index.js'
+
+        document.getElementById('btnGerarLoremIpsum').addEventListener('click', () => { 
+          document.getElementById('result').value = lorem.generateWords(1);
+        });
+     
+
+    </script>
+
+    
+
   </body>
 
-  <script src="index.js"></script>
+
 
 
 </html>
