@@ -12,11 +12,12 @@
 
     <form>
         <div>
-            <button type="button" class="outline" id="btnGerarLoremIpsum">Gerar Lorem Ipsum</button><br>
+            <button type="button" id="btnGerarLoremIpsum">Gerar Lorem Ipsum</button><br>
         </div>
 
         <div>
-            <input type="text" id="result" />
+          <p><strong>Resultado:</strong>
+          <input class="big-input" type="text" id="result" />
         </div>
 
 
@@ -24,12 +25,14 @@
     </form>
 	  <script type="module">
 
+   
       import { lorem } from './index.js'
 
         document.getElementById('btnGerarLoremIpsum').addEventListener('click', () => { 
-          document.getElementById('result').value = lorem.generateWords(1);
+          document.getElementById('result').value = lorem.generateWords(200);
         });
-     
+        
+        
 
     </script>
 
