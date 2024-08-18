@@ -12,35 +12,42 @@
 
     <form>
         <div>
-            <button type="button" id="btnGerarLoremIpsum">Gerar Lorem Ipsum</button><br>
+          <button type="button" id="btnGerarLoremIpsum">Gerar Lorem Ipsum</button><br>
         </div>
 
-        <div>
-          <p><strong>Resultado:</strong>
-          <input class="big-input" type="text" id="result" />
-        </div>
-
+        <p>
+          <strong>Resultado:</strong><br>
+           <span type="text" class="textarea" role="textbox" id="result" contenteditable>
+             
+           </span>
+        </p>
 
 
     </form>
 	  <script type="module">
-
    
       import { lorem } from './index.js'
 
-        document.getElementById('btnGerarLoremIpsum').addEventListener('click', () => { 
-          document.getElementById('result').value = lorem.generateWords(200);
-        });
+      document.getElementById('btnGerarLoremIpsum').addEventListener('click', () => { 
+        document.getElementById('result').textContent = lorem.generateWords(200);
+      });
         
-        
+      function calcHeight(value) {
+        let numberOfLineBreaks = (value.match(/\n/g) || []).length;
+        // min-height + lines x line-height + padding + border
+        let newHeight = 20 + numberOfLineBreaks * 20 + 12 + 2;
+        return newHeight;
+      }
+
+      let textarea = document.querySelector(".resize-ta");
+      textarea.addEventListener("keyup", () => {
+        textarea.style.height = calcHeight(textarea.value) + "px";
+      });
 
     </script>
 
-    
 
   </body>
-
-
 
 
 </html>
